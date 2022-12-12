@@ -1,0 +1,111 @@
+import java.util.Scanner;
+
+public class methodhesaplama {
+    public static int toplama(int a, int b){
+        return a+b;
+    }
+    public static int toplama(int a, int b,int c){
+        return a+b+c;
+    }
+    public static int cıkarma(int a , int b){
+        return a-b;
+    }
+    public static int cıkarma(int a,int b ,int c){
+        return a-b-c;
+    }
+    public static int carpma(int a,int b){
+        return a*b;
+    }
+    public static int bölme(int a, int b){
+        return a/b;
+    }
+
+
+    public static void main(String[] args){
+        Scanner scanner = new Scanner(System.in);
+        String işlemler = "1.işlem toplama \n"+"2.işlem çıkarma\n"+"3.işlem çarpma\n"+"4.işlem bölme\n"+"çıkış için q'ya basınız\n";
+        System.out.println("**************************");
+        System.out.println(işlemler);
+        System.out.println("**************************");
+
+        while (true){
+            System.out.println("yapıcağınız işlemi seçiniz:");
+            String islem = scanner.nextLine();
+            if (islem.equals("q")){
+                System.out.println("programdan çıkılıyor..");
+                break;
+            } else if (islem.equals("1")) {
+                System.out.println("kaç değer ile işlemi gerçekleştirmek istiyorsunuz?\n"+"1.işlem : 2\n"+"2.işlem : 3 \n");
+                int kacdeger= scanner.nextInt();
+                scanner.nextLine();
+                if (kacdeger == 2){
+                    System.out.println("birinci değer:");
+                    int a = scanner.nextInt();
+                    System.out.println("ikinci değer :");
+                    int b = scanner.nextInt();
+                    scanner.nextLine();
+                    System.out.println("gerçekleşen işlem:"+toplama(a,b));
+                } else if ( kacdeger ==3) {
+                    System.out.println("birinci değer :");
+                    int a = scanner.nextInt();
+                    System.out.println("ikinci değer:");
+                    int b = scanner.nextInt();
+                    System.out.println("üçüncü değer:");
+                    int c = scanner.nextInt();
+                    scanner.nextLine();
+                    System.out.println("gerçekleşen işlem:"+toplama(a,b,c));
+
+                }else {
+                    System.out.println("uygun bir method bulunmuyor..");
+                }
+
+
+            }else if (islem.equals("2")){
+                System.out.println("kaç değer ile işlemi gerçekleştirmek istiyorsunuz?\n"+"1.işlem:2\n"+"2.işlem:3\n");
+                int kacdeger = scanner.nextInt();
+
+                if (kacdeger==2){
+                    System.out.println("birinci değer:");
+                    int a = scanner.nextInt();
+                    System.out.println("ikinci değer:");
+                    int b = scanner.nextInt();
+                    scanner.nextLine();
+                    System.out.println("gerçekleşen işlem:"+cıkarma(a,b));
+                } else if (kacdeger==3) {
+                    System.out.println("birinci değer:");
+                    int a = scanner.nextInt();
+                    System.out.println("ikinci değer:");
+                    int b = scanner.nextInt();
+                    System.out.println("üçüncü değer:");
+                    int c = scanner.nextInt();
+                    scanner.nextLine();
+                    System.out.println("gerçekleşen işlem:"+cıkarma(a,b,c));
+
+
+                }else{
+                    System.out.println("girilen method bulunmamaktadır");
+                }
+            } else if (islem.equals("3")) {
+                System.out.println("birinci değer");
+                int a = scanner.nextInt();
+                System.out.println("ikinci değer");
+                int b = scanner.nextInt();
+                scanner.nextLine();
+                System.out.println("gerçekleşen işlem:"+ carpma(a,b));
+
+            } else if (islem.equals("4")) {
+                System.out.println("birinci değer:");
+                int a = scanner.nextInt();
+                System.out.println("ikinci değer:");
+                int b = scanner.nextInt();
+                scanner.nextLine();
+                System.out.println("gerçekleşen işlem: "+bölme(a,b));
+
+            }else {
+                System.out.println("geçersiz işlem...");
+            }
+
+        }
+        }
+    }
+
